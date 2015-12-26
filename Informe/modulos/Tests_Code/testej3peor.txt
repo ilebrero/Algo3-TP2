@@ -1,0 +1,19 @@
+public void generateAllWorstCase() {
+		double tiempo ;
+		double[] tiempos = null;
+		String string;
+		for (int i = 0; i < 1000; i += 2) {
+			string = "0";
+			tiempos = new double[5];
+			for (int j = 0 ; j < i ; j++) {
+					string = string + " " + j;
+			}
+			for (int j = 0; j < tiempos.length; j++) {
+				tiempo = System.nanoTime();
+				tp1.main.Main.testCatedraEj2Params(string);
+				tiempo = System.nanoTime() - tiempo;
+				tiempos[j] = tiempo;
+			}
+			System.out.print(obtenerPromedio(tiempos) + ";");
+		}	
+	}

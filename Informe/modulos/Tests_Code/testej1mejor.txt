@@ -1,0 +1,22 @@
+public void generateAllbestCase() {
+    // Calentamos la maquina si queremos medir tiempos.
+	String string;
+	double tiempo ;
+	double[] tiempos;
+	for (int i = 0; i < 100; i++) {
+		tiempos = new double[5];
+		string = "1";
+		for (int j = 0; j < i ; j++) {
+			string = string + " 1";
+		}
+		for (int j = 0; j < tiempos.length; j++) {
+			tiempo = System.nanoTime();
+			tp1.main.Main.testCatedraEj1Params(string,
+			Integer.MAX_VALUE);
+			tiempo = System.nanoTime() - tiempo;
+			tiempos[j] = tiempo;
+		}
+		
+		System.out.print(obtenerPromedio(tiempos) + ";");
+		}
+	}
